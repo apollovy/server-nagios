@@ -1,0 +1,11 @@
+#!/bin/sh
+
+SHAIRPORT_PID=`cat /var/run/Shairport\@SERVER.pid`
+if [ `ps -p $SHAIRPORT_PID | wc -l` -eq 2 ]
+then
+	echo 'SHAIRPORT OK'
+	exit 0
+else
+	echo 'SHAIRPORT DOWN'
+	exit 1
+fi

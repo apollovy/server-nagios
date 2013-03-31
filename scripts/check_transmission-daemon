@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ `sudo supervisorctl status transmission-daemon | grep RUNNING | wc -l ` -eq 1 ]
+then
+	echo "TRANSMISSION OK"
+	exit 0
+else
+	echo "TRANSMISSION DOWN"
+	exit 2
+fi

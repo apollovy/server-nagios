@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ `avahi-browse --all -t | grep "Samsung ML-1210 @ mc-scrat-laptop" | wc -l` -eq 3 ]
+then
+	echo "AIRPRINT OK"
+	exit 0
+else
+	echo "AIRPRINT DOWN"
+	exit 1
+fi

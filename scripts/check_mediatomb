@@ -1,0 +1,11 @@
+#!/bin/sh
+
+PID=`cat /var/run/mediatomb.pid`
+if [ `ps -p $PID | wc -l` -eq 2 ]
+then
+	echo 'MEDIATOMB OK'
+	exit 0
+else
+	echo 'MEDIATOMB DOWN'
+	exit 1
+fi
