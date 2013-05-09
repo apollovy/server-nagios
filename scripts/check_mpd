@@ -1,0 +1,11 @@
+#!/bin/sh
+
+PID=`cat /var/run/mpd/pid`
+if [ `ps -p $PID | wc -l` -eq 2 ]
+then
+	echo 'MPD OK'
+	exit 0
+else
+	echo 'MPD DOWN'
+	exit 1
+fi
