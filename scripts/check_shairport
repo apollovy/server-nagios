@@ -1,7 +1,6 @@
 #!/bin/sh
 
-SHAIRPORT_PID=`cat /var/run/Shairport\@SERVER.pid`
-if [ `ps -p $SHAIRPORT_PID | wc -l` -eq 2 ]
+if [ `sudo supervisorctl status shairport | grep RUNNING | wc -l ` -eq 1 ]
 then
 	echo 'SHAIRPORT OK'
 	exit 0
