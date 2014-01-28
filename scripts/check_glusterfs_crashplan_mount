@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ `mount | grep glusterfs | grep crashplan | wc -l` -eq 1 ]
+then
+	echo 'CRASHPLAN MOUNT OK'
+	exit 0
+else
+	echo 'CRASHPLAN MOUNT DOWN'
+	exit 1
+fi
