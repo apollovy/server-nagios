@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ `avahi-browse --all -t | grep "AirPrint Samsung-ML-1210 @ server" | wc -l` -eq 3 ]
+if [ `avahi-browse --all -t | grep "AirPrint Samsung-ML-1210 @ server" | wc -l` -gt 0 ]
 then
 	echo "AIRPRINT OK"
 	exit 0
